@@ -1,7 +1,8 @@
+'use strict';
 const knex = require('knex');
 require('dotenv').config();
 
-knexInstance = knex({
+const knexInstance = knex({
   client: 'pg',
   connection: process.env.PG_CONNECTION
 });
@@ -13,19 +14,19 @@ knexInstance = knex({
 //   .where('name', 'ilike', `%${searchTerm}%`)
 //   .then(console.log)
 
-  // const page = 3;
-  // function paginator(page){
-  //   const resultsPerPage = 6;
-  //   const offset = resultsPerPage * (page - 1);
+// const page = 3;
+// function paginator(page){
+//   const resultsPerPage = 6;
+//   const offset = resultsPerPage * (page - 1);
 
-  //   knexInstance
-  //     .select('id', 'name', 'price', 'checked', 'category')
-  //     .from('shopping_list')
-  //     .limit(6)
-  //     .offset(offset)
-  //     .then(console.log)
-  // }
-  // paginator(page);
+//   knexInstance
+//     .select('id', 'name', 'price', 'checked', 'category')
+//     .from('shopping_list')
+//     .limit(6)
+//     .offset(offset)
+//     .then(console.log)
+// }
+// paginator(page);
 
 
 // function created(daysAgo){

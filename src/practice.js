@@ -14,7 +14,7 @@ console.log('connection successful', process.env.PG_CONNECTION);
 //     console.log(result);
 //   });
 
-const searchTerm = 'holo'
+const searchTerm = 'holo';
 
 function mostPopularVideosForDays(days) {
   knexInstance
@@ -23,7 +23,7 @@ function mostPopularVideosForDays(days) {
     .where(
       'date_viewed',
       '>',
-      knexInstance.raw(`now() - '?? days'::INTERVAL`, days)
+      knexInstance.raw('now() - \'?? days\'::INTERVAL', days)
     )
     .from('whopipe_video_views')
     .groupBy('video_name', 'region')
@@ -32,8 +32,8 @@ function mostPopularVideosForDays(days) {
       { column: 'views', order: 'DESC' },
     ])
     .then(result => {
-      console.log(result)
-    })
+      console.log(result);
+    });
 }
 
-mostPopularVideosForDays(30)
+mostPopularVideosForDays(30);
